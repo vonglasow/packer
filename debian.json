@@ -42,8 +42,8 @@
         {
             "type": "shell",
             "scripts": [
-                "Scripts/packages.sh",
-                "Scripts/base.sh"
+                "scripts/packages.sh",
+                "scripts/base.sh"
             ]
         }
     ]
