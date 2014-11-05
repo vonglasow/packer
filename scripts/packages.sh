@@ -28,7 +28,7 @@ sudo aptitude install -y libxml2-dev \
                         freetds-dev \
                         pkg-config \
                         unixodbc-dev \
-                        libpq-dev
+                        libpspell-dev
 
 
 sudo ln -s /usr/lib/x86_64-linux-gnu/libldap_r.so /usr/lib/libldap_r.so
@@ -47,7 +47,9 @@ cd ~/php-src
             --with-oci8=no \
             --with-pdo-oci=no \
             --with-pdo-odbc=no \
+            --with-pdo-pgsql=no \
             --enable-opcache=no \
-            --enable-pcntl=no
+            --enable-pcntl=no \
+            --with-libedit=no
 make
 make install
