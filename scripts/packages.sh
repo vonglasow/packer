@@ -10,12 +10,11 @@ sudo aptitude install -y git \
                         gcc \
                         make \
                         linux-headers-$(uname -r) \
-                        php5 \
-                        php5-cli \
-                        php5-fpm
+                        locate
 
 sudo aptitude install -y libxml2-dev \
                         libgmp-dev \
+                        libxslt-dev \
                         libcurl4-openssl-dev \
                         libbz2-dev \
                         libenchant-dev \
@@ -28,28 +27,41 @@ sudo aptitude install -y libxml2-dev \
                         freetds-dev \
                         pkg-config \
                         unixodbc-dev \
-                        libpspell-dev
+                        libpspell-dev \
+                        libpq-dev \
+                        libtidy-dev
 
+sudo updatedb
 
 sudo ln -s /usr/lib/x86_64-linux-gnu/libldap_r.so /usr/lib/libldap_r.so
 sudo ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
 sudo ln -s /usr/lib/x86_64-linux-gnu/libsybdb.so /usr/lib/libsybdb.so
 
+sudo mkdir /usr/local/incl
 sudo ln -s /usr/include/sqlext.h /usr/local/incl/sqlext.h
 
 git clone https://github.com/php/php-src.git ~/php-src
 cd ~/php-src
-./buildconf
+
+git checkout -b PHP-5.6.3 origin/PHP-5.6.3
+
+#./buildconf
 ./configure --enable-all \
             --with-kerberos \
             --with-imap-ssl \
             --prefix=/opt/php7 \
             --with-oci8=no \
+            --with-iodbc=no \
             --with-pdo-oci=no \
             --with-pdo-odbc=no \
             --with-pdo-pgsql=no \
             --enable-opcache=no \
             --enable-pcntl=no \
-            --with-libedit=no
+            --with-libedit=no \
+            --with-readline=no \
+            --with-recode=no \
+            --with-snmp=no \
+            --with-sybase-ct=shared,/usr
+
 make
 make install
