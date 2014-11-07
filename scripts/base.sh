@@ -17,3 +17,8 @@ sudo php -- --install-dir /usr/local/lib
 sudo ln -s \
     /usr/local/lib/composer.phar \
     /usr/local/bin/composer
+
+sudo git clone \
+https://github.com/atoum/atoum /usr/local/share/atoum
+sudo ln -s \
+/usr/local/share/atoum/bin/atoum /usr/local/bin/atoum

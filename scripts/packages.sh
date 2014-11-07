@@ -1,3 +1,4 @@
+chsh -s /bin/zsh
 sudo apt-get update
 sudo apt-get install -y aptitude
 
@@ -46,9 +47,9 @@ cd ~/php-src
 git checkout -b PHP-5.6.3 origin/PHP-5.6.3
 
 ./buildconf --force
-./configure
+./configure --enable-mbstring --with-openssl --enable-zip
 make
-make install
+sudo make install
 
 #./buildconf
 #./configure --enable-all \
