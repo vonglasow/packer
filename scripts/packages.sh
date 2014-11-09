@@ -1,4 +1,4 @@
-chsh -s /bin/zsh
+sudo chsh -s /bin/zsh
 sudo apt-get update
 sudo apt-get install -y aptitude
 

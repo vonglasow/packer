@@ -1,4 +1,7 @@
 debian:
 	packer build debian.json
 
-.PHONY: debian
+clean:
+	rm -rf output*
+
+.PHONY: debian clean

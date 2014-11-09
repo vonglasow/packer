@@ -22,3 +22,11 @@ sudo git clone \
 https://github.com/atoum/atoum /usr/local/share/atoum
 sudo ln -s \
 /usr/local/share/atoum/bin/atoum /usr/local/bin/atoum
+cd /usr/local/share/atoum
+sudo git checkout -b extension origin/extension
+
+sudo git clone \
+https://github.com/hoaproject/Contributions-Atoum-PraspelExtension.git \
+/usr/local/lib/atoum-praspel
+
+declare -r HOA_ATOUM_PRASPEL_EXTENSION=/usr/local/lib/atoum-praspel/Atoum
