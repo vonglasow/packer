@@ -50,24 +50,3 @@ git checkout -b PHP-5.6.3 origin/PHP-5.6.3
 ./configure --enable-mbstring --with-openssl --enable-zip
 make
 sudo make install
-
-#./buildconf
-#./configure --enable-all \
-#            --with-kerberos \
-#            --with-imap-ssl \
-#            --prefix=/opt/php7 \
-#            --with-oci8=no \
-#            --with-iodbc=no \
-#            --with-pdo-oci=no \
-#            --with-pdo-odbc=no \
-#            --with-pdo-pgsql=no \
-#            --enable-opcache=no \
-#            --enable-pcntl=no \
-#            --with-libedit=no \
-#            --with-readline=no \
-#            --with-recode=no \
-#            --with-snmp=no \
-#            --with-sybase-ct=shared,/usr
-#
-#make
-#make install
