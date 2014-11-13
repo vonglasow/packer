@@ -11,9 +11,9 @@ sudo aptitude install -y git \
                         gcc \
                         make \
                         linux-headers-$(uname -r) \
-                        locate
-
-sudo aptitude install -y libxml2-dev \
+                        locate \
+                        bzip2 \
+                        libxml2-dev \
                         libgmp-dev \
                         libxslt-dev \
                         libcurl4-openssl-dev \

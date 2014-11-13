@@ -43,7 +43,8 @@
             "type": "shell",
             "scripts": [
                 "scripts/packages.sh",
-                "scripts/base.sh"
+                "scripts/base.sh",
+                "scripts/vbox.sh"
             ]
         }
     ]

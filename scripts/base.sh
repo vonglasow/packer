@@ -31,3 +31,16 @@ https://github.com/hoaproject/Contributions-Atoum-PraspelExtension.git \
 
 sudo echo 'declare -x HOA_ATOUM_PRASPEL_EXTENSION=/usr/local/lib/atoum-praspel/' >> ~/.profile
 
+git clone --recursive https://github.com/vonglasow/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+touch ~/.zshrc
+
+#zsh
+#
+#setopt EXTENDED_GLOB
+#rm -f ~/.zshrc
+#
+#for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+#  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+#done
+
