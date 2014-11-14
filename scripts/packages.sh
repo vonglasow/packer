@@ -44,8 +44,7 @@ sudo ln -s /usr/include/sqlext.h /usr/local/incl/sqlext.h
 git clone https://github.com/php/php-src.git ~/php-src
 cd ~/php-src
 
-git checkout -b PHP-5.6.3 origin/PHP-5.6.3
-
+make distclean
 ./buildconf --force
 ./configure --enable-mbstring --with-openssl --enable-zip
 make
