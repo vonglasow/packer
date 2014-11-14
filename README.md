@@ -2,7 +2,7 @@ Virtual Builder
 ===============
 
 It's a little tool which allow to build a virtual machine. This VM contain:
-- php 5.6.3
+- php 7
 - composer
 - Hoa
 - atoum (and extension atoum-praspel)
@@ -35,7 +35,6 @@ Requirements
 Todo
 ====
 
-- Add Virtualbox Guest Additions
 - Allow to change password
 - Complete build with postgresql-9.3
 - Provide VM for Vagrant
