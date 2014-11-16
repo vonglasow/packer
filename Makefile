@@ -13,12 +13,14 @@ ifeq ($(UNAME_S),Linux)
 	SED := sed
 	SED_I := sed -i
 	GREPSTRING := Makefile
+	REGEXP := \#\#username\#\#\|\#\#password\#\#
 endif
 ifeq ($(UNAME_S),Darwin)
 	PR   := pr -4 -t -w 80
 	SED := sed -E
 	SED_I := sed -E -i ""
 	GREPSTRING := 'Makefile|0x1F5:0:9'
+	REGEXP := \#\#username\#\#|\#\#password\#\#
 endif
 
 help:
@@ -32,11 +34,11 @@ debian: debian-builded.json preseed-builded.cfg
 	packer build debian-builded.json
 
 debian-builded.json:
-	@$(SED) 's/##username##|##password##/$(username)/g' debian.json > debian-builded.json
+	@$(SED) 's/$(REGEXP)/$(username)/g' debian.json > debian-builded.json
 	@$(SED_I) 's/preseed.cfg/preseed-builded.cfg/g' debian-builded.json
 
 preseed-builded.cfg:
-	@$(SED) 's/##username##\|##password##/$(username)/g' preseed.cfg > preseed-builded.cfg
+	@$(SED) 's/$(REGEXP)/$(username)/g' preseed.cfg > preseed-builded.cfg
 
 clean:
 	@$(RM_DIR) output*
