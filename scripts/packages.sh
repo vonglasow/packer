@@ -46,6 +46,7 @@ cd ~/php-src
 
 make distclean
 ./buildconf --force
-./configure --enable-mbstring --with-openssl --enable-zip
+./configure --enable-mbstring --with-openssl --enable-zip --prefix='/opt/php7'
 make
 sudo make install
+sudo ln -s /opt/php7/bin/php /usr/local/bin/php7
